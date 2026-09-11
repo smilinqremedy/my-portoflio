@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{.Title}} | Maison Royale</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-block;
+            margin-bottom: 60px;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+        .card {
+            border: 1px solid #292929;
+            background: #111111;
+            padding: 60px 45px;
+        }
+
+        .icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 30px;
+            border: 1px solid #d4af37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4af37;
+            font-size: 28px;
+        }
+
+        .eyebrow {
+            color: #d4af37;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 400;
+            line-height: 1.05;
+            margin-bottom: 22px;
+        }
+
+        .message {
+            max-width: 520px;
+            margin: 0 auto 35px;
+            color: #b8b8b8;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #d4af37;
+            color: #080808;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            background: #ffffff;
+        }
+
+        .secondary {
+            display: block;
+            margin-top: 22px;
+            color: #888888;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .secondary:hover {
+            color: #d4af37;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .card {
+                padding: 45px 25px;
+            }
+
+            .logo {
+                margin-bottom: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <a href="/" class="logo">
+        MAISON <span>ROYALE</span>
+    </a>
+
+    <div class="card">
+
+        <div class="icon">
+            !
+        </div>
+
+        <p class="eyebrow">
+            ERROR {{.Status}}
+        </p>
+
+        <h1>
+            {{.Title}}
+        </h1>
+
+        <p class="message">
+            {{.Message}}
+        </p>
+
+        <a href="/#booking" class="button">
+            Back to Reservations
+        </a>
+
+        <a href="/" class="secondary">
+            Return to Maison Royale
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

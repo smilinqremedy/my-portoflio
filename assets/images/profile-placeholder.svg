@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 460" width="400" height="460">
+  <rect width="100%" height="100%" fill="#101114"/>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c8f135" />
+      <stop offset="100%" stop-color="#8bb700" />
+    </linearGradient>
+  </defs>
+  <!-- Background subtle geometric accents -->
+  <circle cx="200" cy="170" r="85" fill="none" stroke="#25272d" stroke-width="2" />
+  <circle cx="200" cy="170" r="110" fill="none" stroke="#1d1e22" stroke-width="2" stroke-dasharray="6,6" />
+  
+  <!-- Stylized avatar silhouette -->
+  <circle cx="200" cy="165" r="60" fill="url(#grad)" />
+  <path d="M 110 360 C 110 265, 290 265, 290 360 Z" fill="url(#grad)" />
+
+  <!-- Initials badge -->
+  <rect x="140" y="385" width="120" height="34" rx="4" fill="#25272d" stroke="#c8f135" stroke-width="1.5" />
+  <text x="200" y="408" fill="#c8f135" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" letter-spacing="3" text-anchor="middle">OF / DEV</text>
+</svg>

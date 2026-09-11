@@ -1,0 +1,6 @@
+# Application data and local builds
+projects/maison-royale-hotel-main/hotel.db
+projects/maison-royale-hotel-main/maison-royale
+
+# System files
+.DS_Store

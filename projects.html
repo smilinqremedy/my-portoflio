@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Projects by Ocheche Fredrick - Full-Stack Software Engineer & Security Practitioner." />
+    <title>Projects — Ocheche Fredrick</title>
+    <link rel="stylesheet" href="assets/css/portfolio.css" />
+  </head>
+  <body>
+    <!-- Clean Minimal Navigation -->
+    <header class="site-nav">
+      <div class="container">
+        <a class="nav-brand" href="index.html">
+          <span class="nav-brand-dot"></span>
+          Ocheche Fredrick
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+          <a class="nav-link-badge" href="https://github.com/smilinqremedy" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero-section" style="padding-bottom: 32px;">
+        <h1 style="font-size: 1.85rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px;">
+          Projects &amp; Architecture
+        </h1>
+        <p style="color: var(--text-secondary); max-width: 620px; font-size: 0.98rem; line-height: 1.65;">
+          A collection of full-stack web applications engineered for real-world reliability, clean separation of concerns, and defensive security.
+        </p>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="section-block">
+        <!-- Project Card: Maison Royale -->
+        <article class="project-card">
+          <div class="project-header">
+            <h2 class="project-title">
+              Maison Royale Hotel
+            </h2>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/smilinqremedy/maison-royale-hotel" target="_blank" rel="noreferrer">GitHub Repo ↗</a>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            A full-stack hotel booking platform built from scratch with an emphasis on zero-dependency backend architecture, secure session management, and server-side validation.
+          </p>
+
+          <ul class="project-features">
+            <li><strong>Reservation Flow:</strong> Server-side verification for booking intervals, room availability, and guest constraints.</li>
+            <li><strong>Admin Control:</strong> Protected administration dashboard to inspect reservations, update bookings, and manage occupancy.</li>
+            <li><strong>Hardened Security:</strong> CSRF token verification on state-changing requests, bcrypt password hashing, secure cookie flags, and brute-force rate limiting.</li>
+          </ul>
+
+          <div class="tech-tag-row">
+            <span class="tech-badge">Go 1.22</span>
+            <span class="tech-badge">SQLite</span>
+            <span class="tech-badge">CSRF Defense</span>
+            <span class="tech-badge">Bcrypt Hashing</span>
+            <span class="tech-badge">Rate Limiting</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">HTML5/CSS3</span>
+          </div>
+        </article>
+      </section>
+
+      <hr class="section-divider" />
+
+      <!-- Contact Callout -->
+      <section class="section-block">
+        <div class="contact-box">
+          <div class="contact-info">
+            <h3>Have a project in mind?</h3>
+            <p>I’m open to discussing engineering roles, web development projects, and security reviews.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:ochechefredrick23@gmail.com">
+              Email Me
+            </a>
+            <a class="btn btn-secondary" href="https://wa.me/2348105520407" target="_blank" rel="noreferrer">
+              WhatsApp ↗
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Clean Footer -->
+    <footer>
+      <div class="container">
+        <span>© 2026 Ocheche Fredrick</span>
+        <div class="footer-nav">
+          <a href="mailto:ochechefredrick23@gmail.com">Email</a>
+          <a href="https://github.com/smilinqremedy" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://x.com/FredyRemedy" target="_blank" rel="noreferrer">Twitter / X</a>
+          <a href="https://wa.me/2348105520407" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="#">Top ↑</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maison Royale | Luxury Hotel</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="/" class="logo">
+            MAISON <span>ROYALE</span>
+        </a>
+
+        <nav>
+
+            <div class="nav-links">
+                <a href="#rooms">Rooms</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <a href="#booking" class="nav-button">Book a Stay</a>
+
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <p class="eyebrow">
+                LUXURY • COMFORT • EXPERIENCE
+            </p>
+
+            <h1>
+                Stay somewhere
+                <span>extraordinary.</span>
+            </h1>
+
+            <p class="hero-text">
+                Experience refined hospitality, elegant spaces,
+                and exceptional service at Maison Royale.
+            </p>
+
+            <a href="#booking" class="primary-button">
+                Reserve Your Stay
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="intro" id="experience">
+
+        <div class="container intro-grid">
+
+            <div>
+
+                <p class="eyebrow">
+                    WELCOME TO MAISON ROYALE
+                </p>
+
+                <h2>
+                    A stay designed
+                    around you.
+                </h2>
+
+            </div>
+
+            <div>
+
+                <p>
+                    From the moment you arrive, every detail is designed
+                    to make your stay effortless. Discover beautifully
+                    appointed rooms, exceptional dining, and thoughtful
+                    hospitality.
+                </p>
+
+                <p>
+                    Whether you're visiting for business, romance, or
+                    relaxation, Maison Royale gives you a place to slow
+                    down and enjoy the experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ROOMS -->
+
+    <section id="rooms" class="rooms">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        ACCOMMODATION
+                    </p>
+
+                    <h2>
+                        Find your perfect stay.
+                    </h2>
+
+                </div>
+
+                <p>
+                    Choose from our collection of carefully designed rooms
+                    and suites.
+                </p>
+
+            </div>
+
+
+            <div class="room-grid">
+
+                {{range .Rooms}}
+
+                <article class="room-card">
+
+                    <div class="room-image"></div>
+
+                    <div class="room-content">
+
+                        <div class="room-top">
+
+                            <h3>
+                                {{.Name}}
+                            </h3>
+
+                            <strong>
+                                ₦{{money .Price}} <small>/ night</small>
+                            </strong>
+
+                        </div>
+
+                        <p>
+                            {{.Description}}
+                        </p>
+
+                        <div class="room-bottom">
+
+                            <span>
+                                Up to {{.Capacity}} guests
+                            </span>
+
+                            <a
+                                href="#booking"
+                                class="reserve-room"
+                                data-room-id="{{.ID}}"
+                            >
+                                Reserve →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                {{end}}
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING -->
+
+    <section id="booking" class="booking">
+
+        <div class="container booking-container">
+
+            <div class="booking-intro">
+
+                <p class="eyebrow">
+                    RESERVATIONS
+                </p>
+
+                <h2>
+                    Your next stay
+                    starts here.
+                </h2>
+
+                <p>
+                    Select your dates, guests, and preferred room.
+                    We'll take care of the rest.
+                </p>
+
+            </div>
+
+
+            <form
+                class="booking-form"
+                action="/book"
+                method="POST"
+            >
+
+                <div class="form-group">
+
+                    <label for="check-in">
+                        Check-in
+                    </label>
+
+                    <input
+                        type="date"
+                        id="check-in"
+                        name="check_in"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="check-out">
+                        Check-out
+                    </label>
+
+                    <input
+                        type="date"
+                        id="check-out"
+                        name="check_out"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="guests">
+                        Guests
+                    </label>
+
+                    <select
+                        id="guests"
+                        name="guests"
+                        required
+                    >
+
+                        {{range .GuestOptions}}
+
+                        <option value="{{.}}">
+                            {{.}} {{if eq . 1}}Guest{{else}}Guests{{end}}
+                        </option>
+
+                        {{end}}
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="room">
+                        Room
+                    </label>
+
+                    <select
+                        id="room"
+                        name="room"
+                        required
+                    >
+
+                        {{range .Rooms}}
+
+                        <option
+                            value="{{.ID}}"
+                            data-price="{{.Price}}"
+                            data-capacity="{{.Capacity}}"
+                        >
+                            {{.Name}}
+                        </option>
+
+                        {{end}}
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="guest-name">
+                        Full name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="guest-name"
+                        name="guest_name"
+                        placeholder="Name on the reservation"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="guest-email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="guest-email"
+                        name="guest_email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="guest-phone">
+                        Phone <span class="optional">(optional)</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="guest-phone"
+                        name="guest_phone"
+                        placeholder="+234 800 000 0000"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button booking-button"
+                >
+                    Check Availability
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <div class="container contact-grid">
+
+            <div>
+
+                <p class="eyebrow">
+                    CONTACT
+                </p>
+
+                <h2>
+                    We'd love to
+                    welcome you.
+                </h2>
+
+            </div>
+
+            <div>
+
+                <p>
+                    12 Royal Crescent<br>
+                    Victoria Island<br>
+                    Lagos, Nigeria
+                </p>
+
+                <p>
+                    +234 800 000 0000<br>
+                    stay@maisonroyale.com
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div class="footer-logo">
+            MAISON <span>ROYALE</span>
+        </div>
+
+        <p>
+            © 2026 Maison Royale. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="/static/js/app.js"></script>
+
+</body>
+</html>
